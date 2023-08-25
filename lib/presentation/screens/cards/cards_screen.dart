@@ -55,7 +55,7 @@ class _CardsView extends StatelessWidget {
             (card) => _CardType4( elevation: card['elevation'], label: card['label'] ),
           ),
           
-          const SizedBox(height: 50 ),
+          const SizedBox(height: 50 ),//Esto permite que el scroll no quede parado justo al final sino que deje un espacio
         ],
       ),
     );
@@ -208,16 +208,16 @@ class _CardType4 extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final colors = Theme.of(context).colorScheme;
+    //final colors = Theme.of(context).colorScheme;
 
     return Card(
-      clipBehavior: Clip.hardEdge,
+      clipBehavior: Clip.hardEdge, //Evita que los hijos se salgan 
       elevation: elevation,
       child: Stack(
         children: [
 
           Image.network(
-            'https://picsum.photos/id/${ elevation.toInt() }/600/350',
+            'https://picsum.photos/id/${ elevation.toInt() }/600/350',//trae de picsum de acuerdo al nombre
             height: 350,
             fit: BoxFit.cover,
           ),
@@ -226,12 +226,12 @@ class _CardType4 extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              decoration: BoxDecoration(
-                color: colors.primary,
-                //color: Colors.yellow,
-                borderRadius: const BorderRadius.only( bottomLeft: Radius.circular(20) )
+              decoration: const BoxDecoration(
+                //color: colors.primary,
+                color: Colors.yellow,
+                borderRadius: BorderRadius.only( bottomLeft: Radius.circular(20) )
               ),
-              child: IconButton(
+              child: IconButton(//Para ver los 3 punticos dentro de la imagen
                 icon: const Icon( Icons.more_vert_outlined),
                 onPressed: () {},
               ),
