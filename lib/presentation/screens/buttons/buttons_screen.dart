@@ -33,11 +33,11 @@ class _ButtonsView extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
     return SizedBox(
-      width: double.infinity,
+      width: double.infinity,//Lo que pueda hacer en la pantalla
       child: Padding(
         padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 20),
-        child: Wrap(
-          spacing: 10,
+        child: Wrap(//Parecido a row pero cuando se acabe el espacio crea una segunda linea y asi sucesivamente
+          spacing: 5,
           alignment: WrapAlignment.center,
           children: [
             ElevatedButton(onPressed: () {}, child: const Text('Elevated')),
@@ -78,8 +78,8 @@ class _ButtonsView extends StatelessWidget {
               onPressed: (){}, 
               icon: const Icon( Icons.app_registration_rounded),
               style: ButtonStyle(
-                backgroundColor: MaterialStatePropertyAll(colors.primary),
-                iconColor: const MaterialStatePropertyAll(Colors.white),
+                backgroundColor: MaterialStatePropertyAll(colors.primary),//Aplique a todo
+                iconColor: const MaterialStatePropertyAll(Colors.yellow),
               ),
             ),
 
@@ -100,15 +100,15 @@ class CustomButton extends StatelessWidget {
     final colors = Theme.of(context).colorScheme;
 
 
-    return ClipRRect(
-      borderRadius: BorderRadius.circular(20),
+    return ClipRRect(//Colocar especificamente los bordes redondeados
+      borderRadius: BorderRadius.circular(15),
       child: Material(
         color: colors.primary,
-        child: InkWell(
+        child: InkWell(//Reacciona al splash screen
           onTap: () {},
           child: const Padding(
-            padding: EdgeInsets.symmetric( horizontal: 20, vertical: 10),
-            child: Text('Hola Mundo', style: TextStyle(color: Colors.white))
+            padding: EdgeInsets.symmetric( horizontal: 10, vertical: 10),
+            child: Text('Mine', style: TextStyle(color: Colors.white))
           ),
         ),
       ),
