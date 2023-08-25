@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 
-const cards = <Map<String,dynamic>>[
-  { 'elevation': 0.0, 'label': 'Elevation 0' },
-  { 'elevation': 1.0, 'label': 'Elevation 1' },
+const cards = <Map<String,dynamic>>[//Listado de tarjetas predefinidas
+  { 'elevation': 0.0, 'label': 'Elevation 0' },//sin elevación
+  { 'elevation': 1.0, 'label': 'Elevation 1' },//Con un poquito de elevacion
   { 'elevation': 2.0, 'label': 'Elevation 2' },
   { 'elevation': 3.0, 'label': 'Elevation 3' },
   { 'elevation': 4.0, 'label': 'Elevation 4' },
@@ -35,7 +35,7 @@ class _CardsView extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SingleChildScrollView(
+    return SingleChildScrollView(//Para poder hacer scroll dentro del primer hijo, en este caso Column
       child: Column(
         children: [
           
@@ -75,7 +75,7 @@ class _CardType1 extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Card(
+    return Card(//Es el propio de flutter
       elevation: elevation,
       child: Padding(
         padding: const EdgeInsets.fromLTRB(10, 5, 10, 10),
@@ -226,9 +226,10 @@ class _CardType4 extends StatelessWidget {
           Align(
             alignment: Alignment.topRight,
             child: Container(
-              decoration: const BoxDecoration(
-                color: Colors.white,
-                borderRadius: BorderRadius.only( bottomLeft: Radius.circular(20) )
+              decoration: BoxDecoration(
+                color: colors.primary,
+                //color: Colors.yellow,
+                borderRadius: const BorderRadius.only( bottomLeft: Radius.circular(20) )
               ),
               child: IconButton(
                 icon: const Icon( Icons.more_vert_outlined),
