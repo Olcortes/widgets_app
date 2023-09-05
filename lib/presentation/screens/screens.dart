@@ -2,6 +2,7 @@
 
 //Se hace para tiomar todos los archivos de un unico lugar
 
+export 'package:widgets_app/presentation/screens/theme_changer/theme_changer_screen.dart';
 export 'package:widgets_app/presentation/screens/animated/animated_screen.dart';
 export 'package:widgets_app/presentation/screens/app_tutorial/app_tutorial_screen.dart';
 export 'package:widgets_app/presentation/screens/buttons/buttons_screen.dart';
@@ -11,3 +12,4 @@ export 'package:widgets_app/presentation/screens/infinite_scroll/infinite_scroll
 export 'package:widgets_app/presentation/screens/progress/progress_screen.dart';
 export 'package:widgets_app/presentation/screens/snackbar/snackbar_screen.dart';
 export 'package:widgets_app/presentation/screens/ui_controls/ui_controls_screen.dart';  
+export 'package:widgets_app/presentation/screens/counter/counter_screen.dart';

@@ -5,7 +5,7 @@ import 'package:widgets_app/presentation/screens/screens.dart';
 final appRouter = GoRouter(
   initialLocation: '/',
   routes: [
-//Cada una de estas es una ruta a una pantalla distinta
+
     GoRoute(
       path: '/',
       name: HomeScreen.name,
@@ -13,7 +13,7 @@ final appRouter = GoRouter(
     ),
 
     GoRoute(
-      path: '/buttons', //Deben ser unicos
+      path: '/buttons',
       name: ButtonsScreen.name,
       builder: (context, state) => const ButtonsScreen(),
     ),
@@ -28,6 +28,48 @@ final appRouter = GoRouter(
       path: '/progress',
       name: ProgressScreen.name,
       builder: (context, state) => const ProgressScreen(),
+    ),
+
+    GoRoute(
+      path: '/snackbars',
+      name: SnackbarScreen.name,
+      builder: (context, state) => const SnackbarScreen(),
+    ),
+
+    GoRoute(
+      path: '/animated',
+      name: AnimatedScreen.name,
+      builder: (context, state) => const AnimatedScreen(),
+    ),
+
+    GoRoute(
+      path: '/ui-controls',
+      name: UiControlsScreen.name,
+      builder: (context, state) => const UiControlsScreen(),
+    ),
+
+    GoRoute(
+      path: '/tutorial',
+      name: AppTutorialScreen.name,
+      builder: (context, state) => const AppTutorialScreen(),
+    ),
+
+    GoRoute(
+      path: '/infinite',
+      name: InfiniteScrollScreen.name,
+      builder: (context, state) => const InfiniteScrollScreen(),
+    ),
+
+    GoRoute(
+      path: '/counter_screen',
+      name: CounterScreen.name,
+      builder: (context, state) => const CounterScreen(),
+    ),
+    
+    GoRoute(
+      path: '/theme_changer',
+      name: ThemeChanger.name,
+      builder: (context, state) => const ThemeChanger(),
     ),
   ],
 );
