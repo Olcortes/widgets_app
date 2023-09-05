@@ -9,7 +9,7 @@ class ThemeChanger extends ConsumerWidget {
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
-    final bool isDarkMode = ref.watch(isDarkProvider);
+    final bool isDarkMode = ref.watch(themeNotifierProvider).isDarkMode;
     return Scaffold(
       appBar: AppBar(
         title: const Text('Cambiar Tema en RunTime'),
@@ -18,13 +18,14 @@ class ThemeChanger extends ConsumerWidget {
             icon: Icon(
                 isDarkMode ? Icons.dark_mode_sharp : Icons.light_mode_sharp),
             onPressed: () {
-              ref.read(isDarkProvider.notifier).update((state) => !state);
+              ref.read(themeNotifierProvider.notifier).toggleDarkMode();
+              //ref.read(isDarkProvider.notifier).update((state) => !state);
               //ref.read(isDarkProvider.notifier).update((isDarkMode) => !isDarkMode);
             },
           )
         ],
       ),
-      body: _ThemeChangerView(),
+      body: const _ThemeChangerView(),
     );
   }
 }
@@ -35,7 +36,7 @@ class _ThemeChangerView extends ConsumerWidget {
   @override
   Widget build(BuildContext context, ref) {
     final List<Color> colors = ref.watch(colorListProvider);
-    final int selectedColor = ref.watch(selectedColorProvider);
+    final int selectedColor = ref.watch(themeNotifierProvider).selectedColor;
     return ListView.builder(
       itemCount: colors.length,
       itemBuilder: (context, index) {
@@ -50,8 +51,8 @@ class _ThemeChangerView extends ConsumerWidget {
             value: index,
             groupValue: selectedColor,
             onChanged: ((index) {
-              ref.read(selectedColorProvider.notifier).state=index!;
-              //todo notificar cambio
+              //ref.read(selectedColorProvider.notifier).state = index!;
+              ref.read(themeNotifierProvider.notifier).changeColorIndex(index!);
             }));
       },
     );
